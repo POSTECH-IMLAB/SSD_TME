@@ -7,7 +7,7 @@ A Pytorch implementation of Single Shot MultoBox Detector. The original code can
 &nbsp;
 
 ## Installation
-For installation, you can follow this [repository] (https://github.com/amdegroot/ssd.pytorch)
+For installation, you can follow this repository (https://github.com/amdegroot/ssd.pytorch)
 The only difference is that this code is perfectly operated with pytorch 0.4.0.
 
 ## Modification
@@ -16,9 +16,14 @@ I added some Modules such as Extension Module and Spatial Weight Module for accu
 <img align="left" src= "https://github.com/kimna4/SSD_TME/blob/master/doc/ssd_tme.png">
 
 <br />
+<br />
+<br />
+<br />
+
+
 
 ## TME Dataset
-You can get the TME Dataset from [here] (http://cmp.felk.cvut.cz/data/motorway/)
+You can get the TME Dataset from here (http://cmp.felk.cvut.cz/data/motorway/).
 
 
 ## Training 
