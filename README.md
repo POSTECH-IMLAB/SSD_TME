@@ -1,43 +1,39 @@
-# pytorch-ssd
+# pytorch-ssd for TME Dataset
 
-by Sheng Tao, Qijie Zhao, Feng Ni. (VDIG，PKU)
-
-#### Reproduced the proposed results.
-
-#### Besides, our proposed upgraded model will be opened soon!(Note that we are not developed from pure SSD)
-- VOC2007
-
-model | mAP
----|---
-ssd300 | 77.27%
-ssd512 | 79.89%
-Ours300-vgg | 80.5%
-Ours512-vgg | 82.1%
-Ours300-resnet101 | 81.7%
-Ours512-resnet101 | 82.7%
+A Pytorch implementation of Single Shot MultoBox Detector. The original code can be found [here](https://github.com/qijiezhao/pytorch-ssd). 
 
 
+&nbsp;
+&nbsp;
+
+## Installation
+For installation, you can follow this [repository] (https://github.com/amdegroot/ssd.pytorch)
+The only difference is that this code is perfectly operated with pytorch 0.4.0.
+
+## Modification
+I added some Modules such as Extension Module and Spatial Weight Module for accurate vehicle detection.
+
+<img align="left" src= "https://github.com/kimna4/SSD_TME/blob/master/doc/ssd_tme.png">
+
+## TME Dataset
+You can get the TME Dataset from [here] (http://cmp.felk.cvut.cz/data/motorway/)
 
 
-- KITTI
+## Training 
+- First download the fc-reduced [VGG-16](https://arxiv.org/abs/1409.1556) PyTorch base network weights at:              https://s3.amazonaws.com/amdegroot-models/vgg16_reducedfc.pth
+- By default, we assume you have downloaded the file in the `ssd.pytorch/weights` dir:
 
-model&Input | mAP
----|---
-ssd300,TBA | TBA
-ssd512,TBA | TBA
-Ours300| 80.2%
-Ours512 | 82.6%
-Ours800 | 86.7%(==>up to 87.9%)
-Ours800-multi-scale| 89.83%(==>up to 90.08%)
+```Shell
+mkdir weights
+cd weights
+wget https://s3.amazonaws.com/amdegroot-models/vgg16_reducedfc.pth
+```
 
-- MS COCO
+- To train SSD_TME using the train script simply specify the parameters listed in `train_tme_sw_deconv.py` as a flag or manually change them.
 
-model&Input | mAP(0.5:0.95)
----|---
-Ours300-vgg|30.1%(TBA)
-Ours300-resnet101|32.1%
-Ours300-vgg-multiscale|36.7%
-Ours512|34.8%(TBA)
-Ours512-vgg-multiscale|39.0%
+```Shell
+python train_tme_sw_deconv.py
+```
 
-**Still being under fixing**.
+
+
